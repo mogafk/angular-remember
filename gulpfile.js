@@ -6,7 +6,8 @@ var copy = require('gulp-copy');
 
 gulp.task('make', function(){
     console.log(__dirname);
-    return gulp.src(["dev/js/main.js", "dev/js/controllers/*.js", "dev/js/services/*.js", "dev/js/directives/*.js"])
+    //return gulp.src(["dev/js/main.js", "dev/js/controllers/*.js", "dev/js/services/*.js", "dev/js/directives/*.js"])
+    return gulp.src(["dev/js/main.js", "dev/js/services/*.js", "dev/js/directives/*.js"])
         .pipe(concat("all.js"))
         .pipe(gulp.dest('build'))
         .pipe(rename("all.min.js"))
