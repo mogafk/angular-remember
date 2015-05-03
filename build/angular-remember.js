@@ -6,15 +6,35 @@ angular.module("remember")
         var saved = storage._getFromLocalStorage();
 
         var save = {
+            /**
+             * Возвращает значение по селектору или создает ключ
+             * с пустым значением в обьекте saved
+             * @param {String} selector имя модели
+             * @returns {String|Boolean} либо значение модели,
+             * либо false в случае, если значения нет
+             */
             getValue: function(selector){
                 if(!saved[selector])
                     false;
                 return saved[selector];
             },
+            /**
+             * Меняет значения по селектору и сохраняет их в localStorage
+             * @param {String} selector имя модели, которое выступает
+             * ключом для обьекта saved
+             * @param {String} value значение модели
+             */
             changeValue: function(selector, value) {
                 saved[selector] = value;
                 storage._saveToLocalStorage(saved);
             },
+            /**
+             * Если ключ в существует в saved, то возращает
+             * saved. В противном случае создает пару ключ-значение
+             * как модель-false
+             * @param {String} selector имя модели
+             * @returns {Object} saved то, что хранится в localStorage
+             */
             getStorage: function (selector){
                 //if(saved == undefined)
                     //saved = storage._getFromLocalStorage();
@@ -30,15 +50,35 @@ angular.module("remember")
     }])
 //angular.module("myDirective")
 angular.module("remember")
+    /*
+    @param {
+     */
     .factory("localStorage", function(){
         var STORAGE_ID;
+        /**
+         * Возвращает обьект с двумя методами для сохранения
+         * и считывания значения localStorage с (де)сериализацией
+         * @param {String} ключ для localStorage
+         */
         return function(id){
             STORAGE_ID = id;
             return {
+                /**
+                 * Возвращает десериализованную строку по ключу id из
+                 * localStorage. Ключ сохраняется в замыкании
+                 * @private
+                 * @return {Object|Array|'{}'}
+                 */
                 _getFromLocalStorage: function(){
                     console.log("id", STORAGE_ID);
                     return JSON.parse(localStorage.getItem(STORAGE_ID) || '{}');
                 },
+                /**
+                 * Сериазилует обьект и записывает его в localStorage по ключу
+                 * id, что сохраняется в замыкании
+                 * @param {Object|Array} inputs
+                 * @private
+                 */
                 _saveToLocalStorage: function(inputs){
                     localStorage.setItem(STORAGE_ID, JSON.stringify(inputs))
                 }
