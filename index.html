@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body ng-app="newApp" ng-controller="mainCtrl">
+
+<input type="text" name="testname" ng-model="lulz" remember/>
+<input type="text" name="testname1"/>
+<input type="text" name="testname2" ng-model="test" remember/>
+<input type="text" name="testname3"/>
+
+<input type="checkbox"/>
+<input type="checkbox" remember ng-model="testCheckbox"/>
+<input type="checkbox" remember ng-model="testCustomVal" ng-true-value="'YES'" ng-false-value="'NO'"/>
+<input type="checkbox"/>
+<!--{{test}}-->
+{{testCheckbox}}
+
+<input type="radio" remember ng-model="color" ng-value="specialValue">
+<input type="radio" ng-model="color" value="red">
+<input type="radio" ng-model="color" value="black">
+<input type="radio" remember ng-model="color" value="blue">
+
+<!--<select remember ng-model="myColor" ng-options="color.name for color in colors">-->
+    <!--&lt;!&ndash;<option value="">&#45;&#45; choose color &#45;&#45;</option>&ndash;&gt;-->
+<!--</select>-->
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="build/all.min.js"></script>
+<!--<script src="build/all.js"></script>-->
+<!--<script src="js/app.js"></script>-->
+<!--<script src="js/controllers/mainCtrl.js"></script>-->
+<!--<script src="js/directives/remember.js"></script>-->
+<!--<script src="js/services/localStorage.js"></script>-->
+<!--<script src="js/services/inputStorage.js"></script>-->
+</body>
+</html>
