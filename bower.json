@@ -1,0 +1,17 @@
+{
+  "name": "angular-remember",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mogafk/angular-remember",
+  "authors": [
+    "NikitaKozhevnikov <mogafk@gmail.com>"
+  ],
+  "description": "simple directive for save value of inputs in localStorage",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
