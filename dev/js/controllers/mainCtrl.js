@@ -1,4 +1,3 @@
-//angular.module("myDirective")
 angular.module("remember")
     .controller("mainCtrl", ['$scope', function($scope){
         $scope.test = "some text";
@@ -17,5 +16,12 @@ angular.module("remember")
             {name:'red', shade:'dark'},
             {name:'blue', shade:'dark', notAnOption: true},
             {name:'yellow', shade:'light', notAnOption: false}
+        ];
+        $scope.colors2 = [
+            'black',
+            'white',
+            'red',
+            'blue',
+            'yellow'
         ];
     }])

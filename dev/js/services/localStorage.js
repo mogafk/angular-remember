@@ -1,8 +1,4 @@
-//angular.module("myDirective")
 angular.module("remember")
-    /*
-    @param {
-     */
     .factory("localStorage", function(){
         var STORAGE_ID;
         /**

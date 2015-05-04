@@ -1,4 +1,3 @@
-//angular.module("myDirective")
 angular.module("remember")
     .factory("inputStorage", ['localStorage', function(localStorage){
         var storage = localStorage("inputs");
